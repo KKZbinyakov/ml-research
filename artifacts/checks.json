@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-29T14:32:30.204719+00:00",
+  "unit_test_count": 56,
+  "unit_test_result": "passed",
+  "unit_test_skipped": 0,
+  "unit_test_platform": "Linux x86_64",
+  "unit_test_uid": 10001,
+  "unit_test_network": "none",
+  "unit_test_rootfs": "read-only",
+  "unit_test_command": "python -m unittest discover -s tests -v",
+  "kustomize_render": "passed",
+  "complete_dependency_locks": {
+    "server": 155,
+    "init": 16
+  },
+  "pip_check": {
+    "server": "passed",
+    "init": "passed"
+  },
+  "lock_checks_as_uid": 10001,
+  "lock_checks_network": "none",
+  "lock_checks_rootfs": "read-only"
+}

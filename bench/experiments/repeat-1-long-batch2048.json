@@ -1,0 +1,337 @@
+{
+  "started_at": "2026-10-29T14:03:15.686139+00:00",
+  "finished_at": "2026-10-29T14:07:15.888131+00:00",
+  "base_url": "http://127.0.0.1:18001",
+  "model": "qwen-cpu",
+  "requests_per_case": 30,
+  "workload": "long",
+  "long_prompt_words": 760,
+  "max_tokens": 32,
+  "temperature": 0,
+  "stream": true,
+  "repeats": 1,
+  "label": "long-batch2048",
+  "provenance": {
+    "git_head": null,
+    "sha256": {
+      "app/download_model.py": "d6fa12967529a00ebce32f2dd6b742f08a2d3e4fd0538b2d6be1a2e4300032ad",
+      "app/privacy.py": "672648ea6b7b02dc8ca849eab037e867d5398e82def32c69b1845eb490ec15b4",
+      "app/serve.py": "d922e244034edc2318537ccf07d80ccdbe092bb1bf5d30fea7f581d81304cf8b",
+      "app/logging.json": "0be2b2d267af0e25cfc1acc6fe175227c2b8f1da97417f1dd5a67a46272480f0",
+      "bench/run.py": "04f43da6c7d6f0f6636ae7adc9d6a1c6c99783d5cff35cc4712d2ea0997faa64",
+      "Dockerfile": "65c683b17b369a336785fb34809b2543f95f7e95a335ae591856ae0962f96d2f",
+      "Dockerfile.init": "ed61e3e67f92ce535845e493f52153756ba9863bfecb25c74d706c1d64afd0d9",
+      "requirements-init.txt": "6a339bb05cc86175488871a6250cfc182f3023b1b806ceac4d1efbbebe9da6a0",
+      "requirements.txt": "b135e1cac33beaaea719823e727c6284cc0123751bb3fdcf5348533d6c38919c"
+    },
+    "environment_sha256": "dfde2f4dac4ae0fe4b7e15c0461b6b623c787c170934a98064043a382653cb3d"
+  },
+  "warmup_excluded": true,
+  "client": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "results": [
+    {
+      "label": "long-batch2048",
+      "repeat": 1,
+      "workload": "long",
+      "concurrency": 2,
+      "warmup": {
+        "ok": true,
+        "count": 2,
+        "failed": 0,
+        "errors": []
+      },
+      "requests": 30,
+      "successes": 30,
+      "errors": 0,
+      "wall_seconds": 152.5227018000005,
+      "requests_per_second": 0.19669203106130592,
+      "output_tokens_per_second": 6.2941449939617895,
+      "input_tokens": 35540,
+      "prompt_tokens_mean": 1184.6666666666667,
+      "prompt_tokens_min": 1184,
+      "prompt_tokens_max": 1185,
+      "output_tokens": 960,
+      "ttft_p50_seconds": 3.5346518000005744,
+      "ttft_p95_seconds": 6.650491299995338,
+      "latency_p50_seconds": 10.127773699998215,
+      "latency_p95_seconds": 10.326602300003287,
+      "requests_detail": [
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.1793596999996225,
+          "latency_seconds": 10.308734500002174,
+          "input_tokens": 1184,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.781151700000919,
+          "latency_seconds": 10.383804800003418,
+          "input_tokens": 1184,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.25230339999689,
+          "latency_seconds": 10.19095599999855,
+          "input_tokens": 1184,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.52010380000138,
+          "latency_seconds": 10.190120899998874,
+          "input_tokens": 1184,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.2740632999993977,
+          "latency_seconds": 10.005120299996634,
+          "input_tokens": 1184,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.436875299994426,
+          "latency_seconds": 9.980398399995465,
+          "input_tokens": 1184,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.242115399996692,
+          "latency_seconds": 10.032677499999409,
+          "input_tokens": 1184,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.357948599994415,
+          "latency_seconds": 10.050053499995556,
+          "input_tokens": 1184,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.22297279999475,
+          "latency_seconds": 9.9126483,
+          "input_tokens": 1184,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.4623176000022795,
+          "latency_seconds": 9.91699299999891,
+          "input_tokens": 1184,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.298429499998747,
+          "latency_seconds": 10.131377099998645,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.4005185999994865,
+          "latency_seconds": 10.096055699999852,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.282316199998604,
+          "latency_seconds": 10.122994599994854,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.39181460000691,
+          "latency_seconds": 10.127442600001814,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.2347560999987763,
+          "latency_seconds": 10.046783599995251,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.38370080000459,
+          "latency_seconds": 10.061945300003572,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.26282540000102,
+          "latency_seconds": 10.166652400002931,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.386633599999186,
+          "latency_seconds": 10.176209599994763,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.382219500002975,
+          "latency_seconds": 10.20639089999895,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.460944300000847,
+          "latency_seconds": 10.181422199995723,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.439097700000275,
+          "latency_seconds": 9.94749210000009,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.569614699998056,
+          "latency_seconds": 9.958086200000253,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.4800987000053283,
+          "latency_seconds": 10.323181899999327,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.553068200002599,
+          "latency_seconds": 10.326602300003287,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.4690174000061234,
+          "latency_seconds": 10.251601900003152,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.644580300002417,
+          "latency_seconds": 10.223094799999672,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.4237171999993734,
+          "latency_seconds": 10.101304199997685,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.5972197000010055,
+          "latency_seconds": 10.127773699998215,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 3.5346518000005744,
+          "latency_seconds": 10.28740509999625,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        },
+        {
+          "ok": true,
+          "status": 200,
+          "error": null,
+          "ttft_seconds": 6.650491299995338,
+          "latency_seconds": 10.283501899997646,
+          "input_tokens": 1185,
+          "output_tokens": 32
+        }
+      ]
+    }
+  ],
+  "markdown_table": "| Workload | Concurrency | Prompt tokens mean (range) | Success / errors | Req/s | Output tok/s | TTFT p50 / p95 (s) | Latency p50 / p95 (s) |\n|---|---:|---:|---:|---:|---:|---:|---:|\n| long | 2 | 1184.667 (1184-1185) | 30 / 0 | 0.197 | 6.29 | 3.535 / 6.650 | 10.128 / 10.327 |",
+  "experiment_repeat": 1
+}

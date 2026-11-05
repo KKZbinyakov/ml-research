@@ -1,0 +1,240 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ml-research
+---
+apiVersion: v1
+data:
+  MODEL_DIR: /models/model
+  MODEL_ID: Qwen/Qwen2.5-0.5B-Instruct
+  MODEL_REVISION: 7ae557604adf67be50417f59c2c2f167def9a775
+  OMP_NUM_THREADS: "4"
+  VLLM_CPU_KVCACHE_SPACE: "1"
+  VLLM_CPU_OMP_THREADS_BIND: nobind
+  serve.yaml: |
+    model: /models/model
+    served-model-name: qwen-cpu
+    dtype: float32
+    max-model-len: 2048
+    max-num-seqs: 4
+    max-num-batched-tokens: 2048
+    tensor-parallel-size: 1
+    enforce-eager: true
+    enable-chunked-prefill: true
+    # vLLM 0.27 YAML drops false boolean values; use the explicit negative flag.
+    no-enable-prefix-caching: true
+kind: ConfigMap
+metadata:
+  name: vllm-config
+  namespace: ml-research
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vllm
+  namespace: ml-research
+spec:
+  ports:
+  - name: http
+    port: 8000
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: vllm
+  type: ClusterIP
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: model-cache
+  namespace: ml-research
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 6Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vllm
+  namespace: ml-research
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vllm
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: vllm
+    spec:
+      automountServiceAccountToken: false
+      containers:
+      - command:
+        - python
+        - /opt/ml/app/serve.py
+        env:
+        - name: MODEL_DIR
+          valueFrom:
+            configMapKeyRef:
+              key: MODEL_DIR
+              name: vllm-config
+        - name: VLLM_CONFIG
+          value: /config/serve.yaml
+        - name: VLLM_API_KEY
+          valueFrom:
+            secretKeyRef:
+              key: API_TOKEN
+              name: ml-research-secrets
+        - name: HF_HUB_OFFLINE
+          value: "1"
+        - name: TRANSFORMERS_OFFLINE
+          value: "1"
+        - name: VLLM_NO_USAGE_STATS
+          value: "1"
+        - name: DO_NOT_TRACK
+          value: "1"
+        - name: VLLM_CPU_KVCACHE_SPACE
+          valueFrom:
+            configMapKeyRef:
+              key: VLLM_CPU_KVCACHE_SPACE
+              name: vllm-config
+        - name: OMP_NUM_THREADS
+          valueFrom:
+            configMapKeyRef:
+              key: OMP_NUM_THREADS
+              name: vllm-config
+        - name: VLLM_CPU_OMP_THREADS_BIND
+          valueFrom:
+            configMapKeyRef:
+              key: VLLM_CPU_OMP_THREADS_BIND
+              name: vllm-config
+        image: ml-research-vllm:0.27.0
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: http
+          periodSeconds: 30
+          timeoutSeconds: 5
+        name: vllm
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: http
+          periodSeconds: 10
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: "4"
+            memory: 7Gi
+          requests:
+            cpu: "4"
+            memory: 4Gi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+          runAsGroup: 10001
+          runAsNonRoot: true
+          runAsUser: 10001
+        startupProbe:
+          failureThreshold: 90
+          httpGet:
+            path: /health
+            port: http
+          periodSeconds: 10
+          timeoutSeconds: 5
+        volumeMounts:
+        - mountPath: /models
+          name: model-cache
+          readOnly: true
+        - mountPath: /config
+          name: config
+          readOnly: true
+        - mountPath: /tmp
+          name: tmp
+        - mountPath: /dev/shm
+          name: shm
+      enableServiceLinks: false
+      initContainers:
+      - command:
+        - python
+        - /opt/ml/app/download_model.py
+        env:
+        - name: MODEL_ID
+          valueFrom:
+            configMapKeyRef:
+              key: MODEL_ID
+              name: vllm-config
+        - name: MODEL_REVISION
+          valueFrom:
+            configMapKeyRef:
+              key: MODEL_REVISION
+              name: vllm-config
+        - name: MODEL_DIR
+          valueFrom:
+            configMapKeyRef:
+              key: MODEL_DIR
+              name: vllm-config
+        - name: HF_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: HF_TOKEN
+              name: ml-research-secrets
+              optional: true
+        image: ml-research-init:0.27.0
+        imagePullPolicy: IfNotPresent
+        name: download-model
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1Gi
+          requests:
+            cpu: "1"
+            memory: 1Gi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+          runAsGroup: 10001
+          runAsNonRoot: true
+          runAsUser: 10001
+        volumeMounts:
+        - mountPath: /models
+          name: model-cache
+        - mountPath: /tmp
+          name: tmp
+      securityContext:
+        fsGroup: 10001
+        fsGroupChangePolicy: OnRootMismatch
+        runAsGroup: 10001
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      volumes:
+      - name: model-cache
+        persistentVolumeClaim:
+          claimName: model-cache
+      - configMap:
+          name: vllm-config
+        name: config
+      - emptyDir: {}
+        name: tmp
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 512Mi
+        name: shm

@@ -1,0 +1,123 @@
+{
+  "started_at": "2026-10-29T13:55:16.917983+00:00",
+  "requests": 30,
+  "repeats": 2,
+  "conditions": [
+    {
+      "repeat": 1,
+      "label": "short-seqs4",
+      "result": "bench/experiments/repeat-1-short-seqs4.json",
+      "environment": "bench/experiments/environment-1-short-seqs4.json",
+      "prefix_cache_hits_before": 0.0,
+      "prefix_cache_hits_after": 0.0,
+      "pod": {
+        "name": "vllm-86d4f6f879-jkn8n",
+        "uid": "14c98ebe-3255-4cde-965b-746dd204a63f",
+        "replicaset": "vllm-86d4f6f879",
+        "revision": "8"
+      }
+    },
+    {
+      "repeat": 1,
+      "label": "short-seqs8",
+      "result": "bench/experiments/repeat-1-short-seqs8.json",
+      "environment": "bench/experiments/environment-1-short-seqs8.json",
+      "prefix_cache_hits_before": 0.0,
+      "prefix_cache_hits_after": 0.0,
+      "pod": {
+        "name": "vllm-86d6f55c59-w87zq",
+        "uid": "d757c3f4-f46a-45c8-b06e-ce64170f2296",
+        "replicaset": "vllm-86d6f55c59",
+        "revision": "9"
+      }
+    },
+    {
+      "repeat": 1,
+      "label": "long-batch2048",
+      "result": "bench/experiments/repeat-1-long-batch2048.json",
+      "environment": "bench/experiments/environment-1-long-batch2048.json",
+      "prefix_cache_hits_before": 0.0,
+      "prefix_cache_hits_after": 0.0,
+      "pod": {
+        "name": "vllm-76b555b76d-tb224",
+        "uid": "dbf391f9-1fc1-41ee-ae9b-b4bf3f6daf76",
+        "replicaset": "vllm-76b555b76d",
+        "revision": "10"
+      }
+    },
+    {
+      "repeat": 1,
+      "label": "long-batch4096",
+      "result": "bench/experiments/repeat-1-long-batch4096.json",
+      "environment": "bench/experiments/environment-1-long-batch4096.json",
+      "prefix_cache_hits_before": 0.0,
+      "prefix_cache_hits_after": 0.0,
+      "pod": {
+        "name": "vllm-7ff9c95b76-9rmmk",
+        "uid": "7eaf9d11-7c28-4536-b34b-9007d70a767d",
+        "replicaset": "vllm-7ff9c95b76",
+        "revision": "11"
+      }
+    },
+    {
+      "repeat": 2,
+      "label": "long-batch4096",
+      "result": "bench/experiments/repeat-2-long-batch4096.json",
+      "environment": "bench/experiments/environment-2-long-batch4096.json",
+      "prefix_cache_hits_before": 0.0,
+      "prefix_cache_hits_after": 0.0,
+      "pod": {
+        "name": "vllm-666c589645-dndqf",
+        "uid": "aa49c172-b7d4-471e-950c-5edb7ef4c250",
+        "replicaset": "vllm-666c589645",
+        "revision": "12"
+      }
+    },
+    {
+      "repeat": 2,
+      "label": "long-batch2048",
+      "result": "bench/experiments/repeat-2-long-batch2048.json",
+      "environment": "bench/experiments/environment-2-long-batch2048.json",
+      "prefix_cache_hits_before": 0.0,
+      "prefix_cache_hits_after": 0.0,
+      "pod": {
+        "name": "vllm-7d6ff8c769-td8q6",
+        "uid": "c3857dd1-45ad-4ab0-8162-aa549b542429",
+        "replicaset": "vllm-7d6ff8c769",
+        "revision": "13"
+      }
+    },
+    {
+      "repeat": 2,
+      "label": "short-seqs8",
+      "result": "bench/experiments/repeat-2-short-seqs8.json",
+      "environment": "bench/experiments/environment-2-short-seqs8.json",
+      "prefix_cache_hits_before": 0.0,
+      "prefix_cache_hits_after": 0.0,
+      "pod": {
+        "name": "vllm-7d4ddf9b7-d67lj",
+        "uid": "b1622b87-a0d0-46d7-b28c-9ae937a12867",
+        "replicaset": "vllm-7d4ddf9b7",
+        "revision": "14"
+      }
+    },
+    {
+      "repeat": 2,
+      "label": "short-seqs4",
+      "result": "bench/experiments/repeat-2-short-seqs4.json",
+      "environment": "bench/experiments/environment-2-short-seqs4.json",
+      "prefix_cache_hits_before": 0.0,
+      "prefix_cache_hits_after": 0.0,
+      "pod": {
+        "name": "vllm-567c5474f4-9lkg6",
+        "uid": "0523fd89-9c3e-4c6c-9c05-ceeadd4704b6",
+        "replicaset": "vllm-567c5474f4",
+        "revision": "15"
+      }
+    }
+  ],
+  "status": "complete",
+  "phase": "finished",
+  "restored_original_config": true,
+  "finished_at": "2026-10-29T14:31:58.737730+00:00"
+}

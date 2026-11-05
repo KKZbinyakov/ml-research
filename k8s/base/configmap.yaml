@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vllm-config
+  namespace: ml-research
+data:
+  MODEL_ID: Qwen/Qwen2.5-0.5B-Instruct
+  MODEL_REVISION: 7ae557604adf67be50417f59c2c2f167def9a775
+  MODEL_DIR: /models/model
+  VLLM_CPU_KVCACHE_SPACE: "1"
+  OMP_NUM_THREADS: "4"
+  VLLM_CPU_OMP_THREADS_BIND: nobind
+  serve.yaml: |
+    model: /models/model
+    served-model-name: qwen-cpu
+    dtype: float32
+    max-model-len: 2048
+    max-num-seqs: 4
+    max-num-batched-tokens: 2048
+    tensor-parallel-size: 1
+    enforce-eager: true
+    enable-chunked-prefill: true
+    # vLLM 0.27 YAML drops false boolean values; use the explicit negative flag.
+    no-enable-prefix-caching: true

@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-29T14:32:30.201968+00:00",
+  "status": "passed",
+  "measured_requests": 600,
+  "baseline_requests": 360,
+  "experiment_requests": 240,
+  "errors": 0,
+  "warmup_full_waves_passed": true,
+  "all_outputs_32_tokens": true,
+  "provenance_matches_source_and_environment": true,
+  "paired_conditions_change_one_parameter": true,
+  "fresh_pod_per_condition": true,
+  "experiment_prefix_cache_hits": 0,
+  "original_config_restored": true,
+  "artifacts_sha256": {
+    "bench/results.json": "a6a7b538299ab7a836a957c4872a5f19f16ecb58bd126477aebe32c981d88b0f",
+    "bench/summary.json": "b68ba15e02d84c9c21d12f543462204dbb0048a83d26c57a667d2ac41349150e",
+    "bench/experiments/manifest.json": "6c22ccb7bd7570175d302506b5f546964e911f39fb9d2f9ce96f6fbb8ae98e42",
+    "bench/experiments/summary.json": "24df0b02dbf6194d88ec6aca4e05744e4d36b4ae5b5072afb84df414a96030a9"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-29T14:41:56.152275+00:00",
+  "restart_wall_seconds": 82.00165760000527,
+  "init_exit_code": 0,
+  "init_started_at": "2026-10-29T14:40:35Z",
+  "init_finished_at": "2026-10-29T14:40:36Z",
+  "marker_unchanged": true,
+  "marker_sha256": "6ab499e1bccacdaa53826b0cd6e8973278f916fa4967ef94a146da72838e9565",
+  "hf_import_forbidden": true,
+  "python_socket_disabled": true,
+  "hf_offline": true,
+  "invalid_hf_endpoint": true
+}

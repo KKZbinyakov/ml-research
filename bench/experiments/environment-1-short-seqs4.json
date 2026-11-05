@@ -1,0 +1,276 @@
+{
+  "recorded_at": "2026-10-29T13:56:41.887688+00:00",
+  "docker": {
+    "cpus": 20,
+    "memory_bytes": 16574164992,
+    "architecture": "x86_64",
+    "kernel": "5.15.167.4-microsoft-standard-WSL2",
+    "server_version": "29.3.0",
+    "cgroup_version": "1"
+  },
+  "cpu": {
+    "lscpu": [
+      {
+        "field": "Architecture",
+        "data": "x86_64"
+      },
+      {
+        "field": "CPU op-mode(s)",
+        "data": "32-bit, 64-bit"
+      },
+      {
+        "field": "Address sizes",
+        "data": "39 bits physical, 48 bits virtual"
+      },
+      {
+        "field": "Byte Order",
+        "data": "Little Endian"
+      },
+      {
+        "field": "CPU(s)",
+        "data": "20"
+      },
+      {
+        "field": "On-line CPU(s) list",
+        "data": "0-19"
+      },
+      {
+        "field": "Vendor ID",
+        "data": "GenuineIntel"
+      },
+      {
+        "field": "Model name",
+        "data": "12th Gen Intel(R) Core(TM) i7-12700H"
+      },
+      {
+        "field": "CPU family",
+        "data": "6"
+      },
+      {
+        "field": "Model",
+        "data": "154"
+      },
+      {
+        "field": "Thread(s) per core",
+        "data": "2"
+      },
+      {
+        "field": "Core(s) per socket",
+        "data": "10"
+      },
+      {
+        "field": "Socket(s)",
+        "data": "1"
+      },
+      {
+        "field": "Stepping",
+        "data": "3"
+      },
+      {
+        "field": "BogoMIPS",
+        "data": "5376.02"
+      },
+      {
+        "field": "Flags",
+        "data": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize flush_l1d arch_capabilities"
+      },
+      {
+        "field": "Virtualization",
+        "data": "VT-x"
+      },
+      {
+        "field": "Hypervisor vendor",
+        "data": "Microsoft"
+      },
+      {
+        "field": "Virtualization type",
+        "data": "full"
+      },
+      {
+        "field": "L1d cache",
+        "data": "480 KiB (10 instances)"
+      },
+      {
+        "field": "L1i cache",
+        "data": "320 KiB (10 instances)"
+      },
+      {
+        "field": "L2 cache",
+        "data": "12.5 MiB (10 instances)"
+      },
+      {
+        "field": "L3 cache",
+        "data": "24 MiB (1 instance)"
+      },
+      {
+        "field": "Vulnerability Gather data sampling",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Itlb multihit",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability L1tf",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Mds",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Meltdown",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Mmio stale data",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Reg file data sampling",
+        "data": "Vulnerable: No microcode"
+      },
+      {
+        "field": "Vulnerability Retbleed",
+        "data": "Mitigation; Enhanced IBRS"
+      },
+      {
+        "field": "Vulnerability Spec rstack overflow",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Spec store bypass",
+        "data": "Mitigation; Speculative Store Bypass disabled via prctl and seccomp"
+      },
+      {
+        "field": "Vulnerability Spectre v1",
+        "data": "Mitigation; usercopy/swapgs barriers and __user pointer sanitization"
+      },
+      {
+        "field": "Vulnerability Spectre v2",
+        "data": "Mitigation; Enhanced / Automatic IBRS; IBPB conditional; RSB filling; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S"
+      },
+      {
+        "field": "Vulnerability Srbds",
+        "data": "Not affected"
+      },
+      {
+        "field": "Vulnerability Tsx async abort",
+        "data": "Not affected"
+      }
+    ]
+  },
+  "images": [
+    {
+      "name": "ml-research-vllm:0.27.0",
+      "id": "sha256:20d71989ec2548616f6f03882c1bef4154d0d002c385b8f01b28f18f49106229",
+      "size_bytes": 1775079603,
+      "user": "10001:10001"
+    },
+    {
+      "name": "ml-research-init:0.27.0",
+      "id": "sha256:458e129361a8b44a97e2c89341463c2127c03627e26ae523f87920bd2da320c6",
+      "size_bytes": 58987709,
+      "user": "10001:10001"
+    }
+  ],
+  "config": {
+    "MODEL_DIR": "/models/model",
+    "MODEL_ID": "Qwen/Qwen2.5-0.5B-Instruct",
+    "MODEL_REVISION": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "OMP_NUM_THREADS": "4",
+    "VLLM_CPU_KVCACHE_SPACE": "1",
+    "VLLM_CPU_OMP_THREADS_BIND": "nobind",
+    "serve.yaml": "model: /models/model\nserved-model-name: qwen-cpu\ndtype: float32\nmax-model-len: 2048\nmax-num-seqs: 4\nmax-num-batched-tokens: 2048\ntensor-parallel-size: 1\nenforce-eager: true\nenable-chunked-prefill: true\n# vLLM 0.27 YAML drops false boolean values; use the explicit negative flag.\nno-enable-prefix-caching: true\n"
+  },
+  "serve_config": {
+    "max-num-seqs": "4",
+    "max-num-batched-tokens": "2048",
+    "enable-chunked-prefill": "true",
+    "no-enable-prefix-caching": "true"
+  },
+  "pod": {
+    "name": "vllm-86d4f6f879-jkn8n",
+    "uid": "14c98ebe-3255-4cde-965b-746dd204a63f",
+    "replicaset": "vllm-86d4f6f879",
+    "revision": "8",
+    "phase": "Running",
+    "conditions": [
+      {
+        "type": "PodReadyToStartContainers",
+        "status": "True"
+      },
+      {
+        "type": "Initialized",
+        "status": "True"
+      },
+      {
+        "type": "Ready",
+        "status": "True"
+      },
+      {
+        "type": "ContainersReady",
+        "status": "True"
+      },
+      {
+        "type": "PodScheduled",
+        "status": "True"
+      }
+    ],
+    "containers": [
+      {
+        "name": "vllm",
+        "ready": true,
+        "restart_count": 0,
+        "image": "docker.io/library/ml-research-vllm:0.27.0",
+        "image_id": "sha256:051b195902cf26388c8c00106d6a0bfb8e73e39a069a6b1b3c4981cdad5274d8",
+        "state": "running",
+        "exit_code": null
+      }
+    ],
+    "resources": {
+      "limits": {
+        "cpu": "4",
+        "memory": "7Gi"
+      },
+      "requests": {
+        "cpu": "4",
+        "memory": "4Gi"
+      }
+    },
+    "security_context": {
+      "allowPrivilegeEscalation": false,
+      "capabilities": {
+        "drop": [
+          "ALL"
+        ]
+      },
+      "readOnlyRootFilesystem": true,
+      "runAsGroup": 10001,
+      "runAsNonRoot": true,
+      "runAsUser": 10001
+    },
+    "pod_security_context": {
+      "fsGroup": 10001,
+      "fsGroupChangePolicy": "OnRootMismatch",
+      "runAsGroup": 10001,
+      "runAsNonRoot": true,
+      "runAsUser": 10001,
+      "seccompProfile": {
+        "type": "RuntimeDefault"
+      }
+    }
+  },
+  "source_sha256": {
+    "app/download_model.py": "d6fa12967529a00ebce32f2dd6b742f08a2d3e4fd0538b2d6be1a2e4300032ad",
+    "app/logging.json": "0be2b2d267af0e25cfc1acc6fe175227c2b8f1da97417f1dd5a67a46272480f0",
+    "app/privacy.py": "672648ea6b7b02dc8ca849eab037e867d5398e82def32c69b1845eb490ec15b4",
+    "app/serve.py": "d922e244034edc2318537ccf07d80ccdbe092bb1bf5d30fea7f581d81304cf8b",
+    "bench/run.py": "04f43da6c7d6f0f6636ae7adc9d6a1c6c99783d5cff35cc4712d2ea0997faa64",
+    "bench/summarize.py": "b615de7b73f9a0d6c030280e305d15e790f0f4d810435c94b7cfb3c3ba3af077",
+    "Dockerfile": "65c683b17b369a336785fb34809b2543f95f7e95a335ae591856ae0962f96d2f",
+    "Dockerfile.init": "ed61e3e67f92ce535845e493f52153756ba9863bfecb25c74d706c1d64afd0d9",
+    "requirements-init.txt": "6a339bb05cc86175488871a6250cfc182f3023b1b806ceac4d1efbbebe9da6a0",
+    "requirements.txt": "b135e1cac33beaaea719823e727c6284cc0123751bb3fdcf5348533d6c38919c"
+  }
+}

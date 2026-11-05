@@ -1,0 +1,8 @@
+vllm:prefix_cache_queries_total{engine="0",model_name="qwen-cpu"} 0.0
+vllm:prefix_cache_queries_created{engine="0",model_name="qwen-cpu"} 1.7932802960879288e+09
+vllm:prefix_cache_hits_total{engine="0",model_name="qwen-cpu"} 0.0
+vllm:prefix_cache_hits_created{engine="0",model_name="qwen-cpu"} 1.7932802960879622e+09
+vllm:external_prefix_cache_queries_total{engine="0",model_name="qwen-cpu"} 0.0
+vllm:external_prefix_cache_queries_created{engine="0",model_name="qwen-cpu"} 1.7932802960879745e+09
+vllm:external_prefix_cache_hits_total{engine="0",model_name="qwen-cpu"} 0.0
+vllm:external_prefix_cache_hits_created{engine="0",model_name="qwen-cpu"} 1.7932802960879982e+09

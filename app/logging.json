@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "disable_existing_loggers": false,
+  "formatters": {
+    "safe": {"()": "app.privacy.SafeFormatter"}
+  },
+  "handlers": {
+    "console": {
+      "class": "app.privacy.SafeHandler",
+      "level": "DEBUG",
+      "formatter": "safe",
+      "filters": []
+    }
+  },
+  "root": {"level": "INFO", "handlers": ["console"]}
+}

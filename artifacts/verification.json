@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-29T14:47:49.205574+00:00",
+  "checks": {
+    "health": true,
+    "unauthenticated_401": true,
+    "wrong_bearer_401": true,
+    "authenticated_200": true,
+    "invocations_unauthenticated_401": true,
+    "generative_scoring_unauthenticated_401": true,
+    "pause_unauthenticated_401": true,
+    "abort_requests_unauthenticated_401": true,
+    "inference_200": true,
+    "stream_200_done": true,
+    "invalid_model_404": true,
+    "no_prompt_response_header_query_or_token_in_logs": true,
+    "no_generated_response_in_logs": true,
+    "no_streamed_response_in_logs": true,
+    "logs_match_allowlist": true,
+    "request_fact_logged": true,
+    "rootless_cpu_offline_no_hf_token": true
+  },
+  "runtime": {
+    "uid": 10001,
+    "vllm": "0.27.0+cpu",
+    "torch": "2.13.0+cpu",
+    "cuda": null,
+    "device": "cpu",
+    "hf_token_absent": true,
+    "offline": "1"
+  },
+  "log_records_checked": 101
+}
